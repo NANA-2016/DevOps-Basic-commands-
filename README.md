@@ -3,7 +3,47 @@ Basic commands
 
 ### 1.  **File Management:** Practice creating (`touch`), copying (`cp`), moving/renaming (`mv`), and deleting (`rm`, `rm -i`, `rm -r`) files and directories. View and search contents using `cat`, `less`, `head`, `tail`, `find`, and `grep`.
 
-Creating ,moving, copying and removing files  using touch, mv and cp commands 
+### Creating ,moving, copying and removing files  using touch, mv and cp commands 
+
+I created a directory using <mkdir> command The director name craeted was Directory2 which i have worked with for this 
+
+first part of the project . I < cd > into Directory2 and created a file using the < touch >command. the files created were 
+
+file.txt2 as well as file.txt1 and file.txt3 .txt indicating a file name .. I used the command <ls -l > to check the files 
+
+has been created and it permissions as well.As i had the right to write the file , i  used the command < nano > to write 
+
+some text into the file . I used ctl+x,y enter to save the edited file . Now that some text had been created in the file 
+
+.txt2,i used <cat > command to check the content of the file  and the content which had been writen in the file.txt1 using 
+
+the nano editor was reflected as text.
+
+
+I then used the < cp > command the copy the content of file.txt1 to file.txt2. I confirmed that the file.txt1 has been 
+
+copied to file.txt2 by using a  <cat > command  to see the content of file.txt2. The content of the file had been copied 
+
+into the file . And both files appered when i checcked their existence using the command < ls >.
+
+
+I  then decided to used the<mv> command . these command is used to move files into other files or other directories . I 
+
+moved the file.txt2 and its content to file.txt3. To confirm this i used the  <cat > command with the file file.txt3 and 
+
+the content from file.txt2 had been copied into the file.txt3 and when i checked the list of the files in the Directory2, 
+
+file.txt2 was missing as it had been moved into file.txt3.
+
+<rm > command is used to remove files from a directory . I created a few files using the < touch >command  and created 
+
+rmtest1.txt, rmtest2.txt and rmtest3.txt. I then used the <rm -i >which is an interactive command and removed rmtest3.txt. 
+
+I got a prompt to ask if i wanted to deleted the file .My answer was "yes". the file was deleted from the directory . When 
+
+i checked the file using the ls command ,it was missing from the directory.
+
+All these commands have been demonstrated below with the use of a photo attached .
 
 <img width="642" height="917" alt="image" src="https://github.com/user-attachments/assets/008d80d3-3560-428a-95ae-d3a3e7202b76" />
 
