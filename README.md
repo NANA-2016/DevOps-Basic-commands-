@@ -121,23 +121,60 @@ Playing around with cd command and ls to explore etc, tmp and var files
 
 ### 3.  **System Monitoring and Administration:** Inspect system health using `ps aux`, `top`, `df -h`, `free -m`, and `uptime`. Manage users/groups and configure file permissions and ownership using `chmod`, `chown`, and `sudo`.
 
-## ps,top df-h  and free-m commands are shown in this image 
+## ps,top df-h  and free-m commands are shown in this images 
 
 
 <img width="587" height="897" alt="image" src="https://github.com/user-attachments/assets/ebb62c77-c13e-4e03-a22f-08651346c528" />
 
 <img width="550" height="247" alt="image" src="https://github.com/user-attachments/assets/1272d4d5-02d0-4744-9ef0-0e33e852e641" />
+The commands demonstrated above  can be called the monitoring commands.
+
+< ps> is used to display the information about processes one is working on on the terminal.
+
+< free > the memory which is being utilized by the system. With a -h it shows these in human redable state. The <top > 
+
+command is ussed to show more details and the work happening in the system one is working on.
 
 ### .  **Networking Basics:** Verify connectivity and network configuration using `ping`, `ip addr`, and `netstat` or `ss`.
+
+To check connectivity we csn use <ping> command with thenextension using a certain website to test connetivity for 
+
+eaxample used here  is google.com as "ping -c google.com" command  and it bringa the output showing the IP address of 
+
+google.com <df -h> shows the amout of memoery across linux system.The < free > command is used to show the amout of 
+
+Memeory in linux systems.
 
 <img width="932" height="862" alt="image" src="https://github.com/user-attachments/assets/f736ed70-e98d-4818-99fb-bbba77daa8c7" />
 
 
 ### 5.  **Pipes and Redirection:** Practice redirecting output (`>`, `>>`) and errors (`2>`). Chain commands together using pipes (`|`) to filter and process data (e.g., `grep`, `awk`, `sort`, `uniq`).
 
+## Pipe commands
+
 The above commands above have been demonstrated above.
 
-<img width="762" height="850" alt="image" src="https://github.com/user-attachments/assets/77a56fbd-3fce-4e23-b343-c3cf6acae284" />
+As demonstared above the < awk > command has been demonstrated . The cpmmand in combination with other commands is used to 
+
+give a feedback of the command . Hre it has been given the task to print the content of the file.txt1 <awk '{print}' 
+
+file.txt1 > . The content of the file has then been printed out below these command.
+
+grep has also been used here as well  to demonstare the presence of Apache among the files in the system that has been set 
+
+up < ps aux|grep apache
+
+ The command  <uniq u filename >is used to  open a file and <uniq -f filename > is used to create a formula in a file . 
+ 
+ For instance in this enviroment the file file.txt1 has been edited using the nano editor and the days of the week have 
+ 
+ been added not in order. When cthe command < uniq -f> command the days of the weekare arrangedin order as per theit 
+ 
+ numbers.
+ 
+    # See the photo below
+ 
+ <img width="762" height="850" alt="image" src="https://github.com/user-attachments/assets/77a56fbd-3fce-4e23-b343-c3cf6acae284" />
 
 ### 6.  **Shell Scripting:** Write a reusable Bash script that incorporates variables, conditionals, and loops to automate a directory creation and logging task. Ensure the script is executable.
 
