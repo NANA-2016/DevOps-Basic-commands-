@@ -1,0 +1,828 @@
+# Linux and CLI Mastery – Beginner DevOps Project
+
+## 1. Introduction
+
+This project demonstrates my practical understanding of Linux command-line operations and the foundational skills required in DevOps.
+
+I used the Ubuntu Linux terminal to practise filesystem navigation, package installation, file and directory management, permissions and ownership, input/output redirection, filtering, and system monitoring.
+
+The objective was to develop confidence using Linux commands to manage files, install software, troubleshoot issues, and monitor system resources.
+
+## 2. Learning Objectives
+
+The main objectives of this project were to:
+
+- Navigate the Linux filesystem using absolute and relative paths.
+- Install and verify software packages using a Linux package manager.
+- Create, copy, move, edit, and delete files and directories.
+- Understand Linux permissions and file ownership.
+- Redirect command output and filter information using pipes.
+- Monitor processes, memory, storage, and system uptime.
+- Understand how Linux commands support everyday DevOps activities.
+
+---
+
+# TASK 1: FILESYSTEM NAVIGATION
+
+## 3. Understanding Linux Filesystem Navigation
+
+Linux uses a hierarchical filesystem structure that begins at the root directory `/`.
+
+I practised navigating the filesystem using `pwd`, `ls`, and `cd`.
+
+### Commands practised
+
+**1. pwd – Print Working Directory**
+
+Displays the current directory.
+
+```bash
+pwd
+```
+
+Expected output:
+
+```text
+/home/username
+```
+
+**2. ls – List Directory Contents**
+
+Displays files and directories in the current location.
+
+```bash
+ls
+ls -l
+ls -la
+```
+
+- `ls`: Lists files and directories.
+- `ls -l`: Displays detailed information.
+- `ls -la`: Displays hidden files and detailed information.
+
+**3. cd – Change Directory**
+
+Used to navigate between directories.
+
+```bash
+cd /home
+cd Documents
+cd ..
+cd ~
+```
+
+- `cd /home` uses an absolute path.
+- `cd Documents` uses a relative path.
+- `cd ..` moves one directory backwards.
+- `cd ~` returns to the user's home directory.
+
+### Creating nested directories
+
+I used `mkdir -p` to create nested directories.
+
+```bash
+mkdir -p ~/DevOps/Linux/Practice
+```
+
+I verified the directory structure using:
+
+```bash
+ls -R ~/DevOps
+```
+
+### Exploring important Linux directories
+
+```bash
+cd /etc
+ls
+
+cd /var
+ls
+
+cd /tmp
+ls
+```
+
+**Key concepts learned**
+
+- `/etc` stores system configuration files.
+- `/var` stores variable data such as logs.
+- `/tmp` stores temporary files.
+- `/` is the root of the Linux filesystem.
+- Absolute paths begin at `/`, while relative paths depend on the current working directory.
+
+**Outcome:** I practised navigating the Linux filesystem and locating important system directories.
+
+---
+
+# TASK 2: PACKAGE INSTALLATION AND TOOLS
+
+## 4. Installing Packages in Ubuntu Linux
+
+Linux distributions use package managers to install, update, and remove software.
+
+Ubuntu uses the APT package manager.
+
+### Step 1: Update package information
+
+```bash
+sudo apt update
+```
+
+This retrieves the latest package information from configured software repositories.
+
+### Step 2: Upgrade installed packages
+
+```bash
+sudo apt upgrade
+```
+
+This upgrades installed software packages where updates are available.
+
+### Step 3: Install useful Linux tools
+
+```bash
+sudo apt install tree curl wget htop nano -y
+```
+
+Tools installed:
+
+| Tool | Purpose |
+|---|---|
+| tree | Displays directory structures |
+| curl | Transfers data from URLs |
+| wget | Downloads files |
+| htop | Interactive process monitoring |
+| nano | Command-line text editor |
+
+### Step 4: Verify installation
+
+```bash
+tree --version
+curl --version
+wget --version
+htop --version
+```
+
+### Step 5: Check installed packages
+
+```bash
+apt list --installed
+```
+
+### Step 6: Remove a package (optional)
+
+```bash
+sudo apt remove wget
+```
+
+**Key concepts learned**
+
+- A package manager simplifies software installation.
+- `sudo` provides administrative privileges for authorised operations.
+- `apt update` refreshes package lists.
+- `apt upgrade` upgrades installed packages.
+- Package verification confirms whether a tool is available.
+
+**Outcome:** I learned how to manage Linux software packages using APT and verify installed tools.
+
+---
+
+# TASK 3: FILE AND DIRECTORY MANAGEMENT
+
+## 5. Creating, Copying, Moving and Removing Files
+
+I created a practice directory called `Directory2` to practise file management.
+
+### Step 1: Create a directory
+
+```bash
+mkdir Directory2
+cd Directory2
+```
+
+### Step 2: Create files
+
+```bash
+touch file.txt1 file.txt2 file.txt3
+```
+
+Verify:
+
+```bash
+ls -l
+```
+
+### Step 3: Edit a file
+
+```bash
+nano file.txt1
+```
+
+Example content:
+
+```text
+Hello, welcome to Linux.
+I am learning DevOps.
+Linux is important for system administration.
+I am looking forward to Thursday.
+```
+
+Save using `CTRL + O`, press Enter, then exit using `CTRL + X`.
+
+### Step 4: Display file contents
+
+```bash
+cat file.txt1
+```
+
+### Step 5: Copy files
+
+```bash
+cp file.txt1 file.txt2
+```
+
+Verify:
+
+```bash
+cat file.txt2
+```
+
+The content of `file.txt1` should now also exist in `file.txt2`.
+
+### Step 6: Move or rename files
+
+```bash
+mv file.txt2 file.txt3
+```
+
+The file is moved or renamed to `file.txt3`.
+
+Verify:
+
+```bash
+ls -l
+```
+
+### Step 7: Remove files
+
+Create test files:
+
+```bash
+touch rmtest1.txt rmtest2.txt rmtest3.txt
+```
+
+Remove one interactively:
+
+```bash
+rm -i rmtest3.txt
+```
+
+The terminal asks for confirmation before deleting the file.
+
+Remove an empty directory:
+
+```bash
+mkdir TestDirectory
+rmdir TestDirectory
+```
+
+Remove a directory containing files:
+
+```bash
+rm -r TestDirectory
+```
+
+Use recursive deletion carefully because it can permanently remove files and directories.
+
+### Step 8: View and search file contents
+
+**Display content:**
+
+```bash
+cat file.txt1
+```
+
+**View large files page by page:**
+
+```bash
+less file.txt1
+```
+
+**Display the first lines:**
+
+```bash
+head file.txt1
+```
+
+**Display the last lines:**
+
+```bash
+tail file.txt1
+```
+
+**Find files and directories:**
+
+```bash
+find ~/DevOps -name "file.txt1"
+```
+
+**Search for text:**
+
+```bash
+grep "Linux" file.txt1
+```
+
+**Key concepts learned**
+
+- `touch` creates empty files.
+- `mkdir` creates directories.
+- `cp` copies files.
+- `mv` moves or renames files.
+- `rm` deletes files.
+- `cat`, `less`, `head`, and `tail` help inspect files.
+- `find` searches for files and directories.
+- `grep` searches for matching text.
+
+**Outcome:** I practised creating, editing, copying, moving, deleting, and searching files in Linux.
+
+---
+
+# TASK 4: PERMISSIONS AND OWNERSHIP
+
+## 6. Managing Linux File Permissions
+
+Linux uses permissions to control who can read, write, and execute files.
+
+The three main permission categories are:
+
+- User (u): The file owner.
+- Group (g): Users belonging to the file's group.
+- Others (o): All other users.
+
+### Step 1: Inspect permissions
+
+```bash
+ls -l
+```
+
+Example output:
+
+```text
+-rw-r--r-- 1 username username 45 Nov 27 file.txt1
+```
+
+Permission explanation:
+
+| Permission | Meaning |
+|---|---|
+| r | Read |
+| w | Write |
+| x | Execute |
+| - | Permission not granted |
+
+### Step 2: Change permissions using chmod
+
+Create a script:
+
+```bash
+touch hello.sh
+```
+
+Give the owner read, write, and execute permissions:
+
+```bash
+chmod 700 hello.sh
+```
+
+Give all users read and execute permissions:
+
+```bash
+chmod 755 hello.sh
+```
+
+Remove write permission for group and others:
+
+```bash
+chmod go-w hello.sh
+```
+
+Verify:
+
+```bash
+ls -l hello.sh
+```
+
+### Step 3: Understand numeric permissions
+
+Linux permission values:
+
+| Permission | Numeric value |
+|---|---:|
+| Read (r) | 4 |
+| Write (w) | 2 |
+| Execute (x) | 1 |
+
+Examples:
+
+- `777`: Everyone has full permissions.
+- `755`: Owner has full permissions; group and others can read and execute.
+- `644`: Owner can read and write; group and others can read.
+- `700`: Only the owner has full permissions.
+
+### Step 4: Change ownership
+
+The `chown` command changes file ownership.
+
+```bash
+sudo chown username:username hello.sh
+```
+
+Replace `username` with the actual Linux account name.
+
+Verify:
+
+```bash
+ls -l hello.sh
+```
+
+### Step 5: Use sudo
+
+The `sudo` command allows an authorised user to execute commands with elevated privileges.
+
+Example:
+
+```bash
+sudo apt update
+```
+
+**Key concepts learned**
+
+- Permissions protect files from unauthorised access.
+- `chmod` changes permissions.
+- `chown` changes ownership.
+- `ls -l` displays ownership and permissions.
+- `sudo` allows authorised administrative operations.
+
+**Outcome:** I learned how to inspect and manage file permissions and ownership in Linux.
+
+---
+
+# TASK 5: REDIRECTION AND FILTERING
+
+## 7. Input and Output Redirection
+
+Linux provides redirection operators that control where command output and errors are sent.
+
+### Step 1: Redirect output using >
+
+```bash
+echo "Learning Linux commands" > output.txt
+```
+
+The `>` operator creates a file or overwrites existing content.
+
+Verify:
+
+```bash
+cat output.txt
+```
+
+### Step 2: Append output using >>
+
+```bash
+echo "Learning DevOps fundamentals" >> output.txt
+```
+
+The `>>` operator adds content without removing existing lines.
+
+Verify:
+
+```bash
+cat output.txt
+```
+
+### Step 3: Redirect errors using 2>
+
+```bash
+ls /directory_that_does_not_exist 2> error.log
+```
+
+This redirects error messages into `error.log`.
+
+Verify:
+
+```bash
+cat error.log
+```
+
+### Step 4: Redirect standard output and errors
+
+```bash
+ls /home /invalid-directory > results.log 2>&1
+```
+
+This sends both standard output and error output to the same file.
+
+### Step 5: Use pipes
+
+A pipe (`|`) passes the output of one command into another command.
+
+Example:
+
+```bash
+ls -l | grep ".txt"
+```
+
+This displays files ending in `.txt` from the directory listing.
+
+### Step 6: Filter information using grep
+
+```bash
+grep "Linux" output.txt
+```
+
+Count matching lines:
+
+```bash
+grep -c "Linux" output.txt
+```
+
+Search without case sensitivity:
+
+```bash
+grep -i "linux" output.txt
+```
+
+### Step 7: Sort information
+
+```bash
+sort output.txt
+```
+
+### Step 8: Remove duplicate adjacent lines
+
+```bash
+sort output.txt | uniq
+```
+
+`uniq` removes adjacent duplicate lines, which is why sorting first is useful.
+
+Count occurrences:
+
+```bash
+sort output.txt | uniq -c
+```
+
+### Step 9: Use awk
+
+```bash
+awk '{print $1}' output.txt
+```
+
+This prints the first whitespace-separated field from each line.
+
+### Step 10: Combine commands
+
+```bash
+cat output.txt | grep "Linux" | sort | uniq
+```
+
+This demonstrates how multiple Linux commands can be combined to filter and process information.
+
+**Key concepts learned**
+
+- `>` redirects and overwrites output.
+- `>>` appends output.
+- `2>` redirects error messages.
+- `2>&1` combines standard output and standard error.
+- `|` connects commands.
+- `grep` searches for patterns.
+- `sort` sorts text.
+- `uniq` removes adjacent duplicates.
+- `awk` processes structured text.
+
+**Outcome:** I learned how to redirect command output, capture errors, filter information, and combine commands using pipes.
+
+---
+
+# TASK 6: PROCESS AND SYSTEM MONITORING
+
+## 8. Monitoring Linux System Performance
+
+System monitoring helps administrators understand resource usage and identify processes affecting system performance.
+
+### Step 1: View running processes
+
+```bash
+ps aux
+```
+
+This displays information about running processes.
+
+Search for a particular process:
+
+```bash
+ps aux | grep apache
+```
+
+### Step 2: Monitor processes in real time
+
+```bash
+top
+```
+
+This displays live information about CPU usage, memory consumption, and running processes.
+
+If installed, use:
+
+```bash
+htop
+```
+
+This provides an interactive view of system processes.
+
+### Step 3: Check disk space
+
+```bash
+df -h
+```
+
+Displays available and used disk space in a human-readable format.
+
+### Step 4: Check memory usage
+
+```bash
+free -m
+```
+
+Displays memory usage in megabytes.
+
+Alternatively:
+
+```bash
+free -h
+```
+
+Displays memory information in human-readable units.
+
+### Step 5: Check system uptime
+
+```bash
+uptime
+```
+
+Displays how long the system has been running, the number of logged-in users, and system load averages.
+
+### Step 6: Inspect CPU information
+
+```bash
+lscpu
+```
+
+Displays CPU architecture and processor information.
+
+### Step 7: Inspect system information
+
+```bash
+uname -a
+```
+
+Displays kernel and operating system information.
+
+### Step 8: Monitor system logs
+
+```bash
+sudo journalctl -n 20
+```
+
+Displays the latest 20 system journal entries.
+
+**Key concepts learned**
+
+- `ps aux` lists running processes.
+- `top` provides real-time process monitoring.
+- `htop` provides an interactive monitoring interface.
+- `df -h` checks disk usage.
+- `free -h` checks memory usage.
+- `uptime` checks system uptime and load averages.
+- `lscpu` displays CPU information.
+- `journalctl` provides access to system logs.
+
+**Outcome:** I learned how to inspect running processes and monitor CPU, memory, disk space, and system activity.
+
+---
+
+# 9. Additional Practical Work: Bash Scripting
+
+As an extension of my Linux learning, I also practised creating and executing Bash scripts.
+
+### Creating a script
+
+```bash
+nano hello.sh
+```
+
+Example:
+
+```bash
+#!/bin/bash
+
+echo "Hello, welcome to Linux!"
+echo "Today you are learning Bash scripting."
+```
+
+Make the script executable:
+
+```bash
+chmod +x hello.sh
+```
+
+Execute:
+
+```bash
+./hello.sh
+```
+
+Expected output:
+
+```text
+Hello, welcome to Linux!
+Today you are learning Bash scripting.
+```
+
+This exercise demonstrated how Bash scripts automate multiple commands.
+
+My existing `hello.sh`, `test.sh`, and other practical scripts provide additional examples of this work.
+
+---
+
+# 10. Evidence of Task Completion
+
+The following evidence should be maintained in the repository to demonstrate practical completion.
+
+| Task | Evidence to include |
+|---|---|
+| Filesystem navigation | Screenshot showing `pwd`, `cd`, `mkdir -p`, and `ls` |
+| Package installation | Screenshot showing `apt update`, package installation and version verification |
+| File management | Screenshot showing `touch`, `cp`, `mv`, `rm`, and `cat` |
+| Permissions and ownership | Screenshot showing `chmod`, `chown`, and `ls -l` |
+| Redirection and filtering | Screenshot showing `>`, `>>`, `2>`, `grep`, and pipes |
+| System monitoring | Screenshot showing `ps aux`, `top`, `df -h`, `free -h`, and `uptime` |
+| Bash scripting | Screenshot showing the script contents, permissions and execution |
+
+Screenshots should show the actual terminal commands and their outputs.
+
+Recommended evidence folder:
+
+```text
+DevOps-Basic-commands-/
+│
+├── README.md
+├── Directory1/
+├── Directory2/
+├── scripts/
+│   ├── hello.sh
+│   └── test.sh
+│
+└── screenshots/
+    ├── 01-filesystem-navigation.png
+    ├── 02-package-installation.png
+    ├── 03-file-management.png
+    ├── 04-permissions-ownership.png
+    ├── 05-redirection-filtering.png
+    └── 06-system-monitoring.png
+```
+
+Only include screenshots after completing the corresponding tasks.
+
+---
+
+# 11. Overall Learning Outcomes
+
+Through this practical project, I developed foundational knowledge of Linux command-line operations.
+
+I gained experience in:
+
+1. Navigating Linux directories using absolute and relative paths.
+2. Installing and managing software packages using APT.
+3. Creating, editing, copying, moving and deleting files.
+4. Understanding Linux permissions and ownership.
+5. Redirecting output and errors using Linux operators.
+6. Filtering and processing information using pipes and text-processing commands.
+7. Monitoring processes and system resource usage.
+8. Creating and executing basic Bash scripts.
+
+These skills are important in DevOps because Linux is widely used for application hosting, infrastructure management, automation, troubleshooting, and continuous integration and delivery.
+
+# 12. Conclusion
+
+This project provided practical experience with essential Linux commands and concepts.
+
+I learned how to navigate the Linux filesystem, manage files and directories, install packages, configure permissions, process command-line output, and monitor system performance.
+
+I also gained an understanding of how Linux commands can be combined to perform administrative tasks more efficiently.
+
+The practical activities have established a foundation for further learning in DevOps, including Git, GitHub, Bash automation, Docker, Jenkins, and Kubernetes.
+
+**Project status:** Practical evidence should be added alongside this documentation before final assessment submission.
