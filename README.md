@@ -178,6 +178,140 @@ up < ps aux|grep apache
 
 ### 6.  **Shell Scripting:** Write a reusable Bash script that incorporates variables, conditionals, and loops to automate a directory creation and logging task. Ensure the script is executable.
 
+ ## step to step formate ob Bash file formulation as 
+
+ # Linux and Bash Scripting Practical Report
+
+## 1. Introduction
+
+This report documents my practical learning activities in Linux command-line operations and Bash scripting. The exercises involved creating files, editing scripts, managing file permissions, executing Bash scripts, troubleshooting errors, and understanding basic automation.
+
+The practical exercises were completed using the Ubuntu Linux terminal.
+
+## 2. Objectives
+
+The objectives of the exercises were to:
+
+- Practise basic Linux commands.
+- Create and manage files and directories.
+- Edit files using the Nano text editor.
+- Understand Linux file permissions.
+- Create, execute and troubleshoot Bash scripts.
+- Develop foundational skills for DevOps automation.
+
+## 3. Practical Activities
+
+### 3.1 File Creation and Management
+
+I used the `touch` command to create files, including `file2`, `bashfile2`, `hello.sh`, and `test.sh`.
+
+I used the `ls -l` command to display files, permissions, ownership and file sizes.
+
+The `nano` command was used to create and edit the contents of Bash scripts.
+
+### 3.2 File Permissions
+
+Initially, I encountered a permission-denied error when attempting to execute `bashfile2`.
+
+The error occurred because the file did not have executable permission.
+
+I resolved the issue using:
+
+```bash
+chmod +x bashfile2
+```
+
+I also applied executable permissions to other scripts:
+
+```bash
+chmod +x hello.sh
+chmod +x test.sh
+```
+
+This enabled me to execute the scripts from the terminal.
+
+### 3.3 Bash Script Execution
+
+I created and executed `hello.sh`, which contained commands to display welcome messages.
+
+The script produced the following output:
+
+```text
+Hello, welcome to Linux!
+Today you are learning Bash scripting.
+```
+
+I also created and executed `test.sh`, which displayed:
+
+```text
+Hello there
+What a beautiful day
+```
+
+These exercises demonstrated how Bash scripts can automate the execution of multiple commands.
+
+## 4. Errors Encountered and Troubleshooting
+
+During the practical exercises, I encountered several errors.
+
+### 4.1 Permission Denied
+
+When executing `bashfile2`, I received a permission-denied error.
+
+**Solution:** I used `chmod +x` to grant executable permission.
+
+### 4.2 Command Not Found
+
+I initially entered `chmod+x` without a space.
+
+**Solution:** I corrected the syntax to `chmod +x filename`.
+
+### 4.3 Incorrect Touch Command
+
+I attempted to execute `touch.sh`, which resulted in a command-not-found error.
+
+**Solution:** I corrected the command to `touch test.sh`, where `touch` is the command and `test.sh` is the filename.
+
+These troubleshooting exercises improved my understanding of Linux command syntax and file permissions.
+
+## 5. Commands Practised
+
+| Command | Description |
+|---|---|
+| `ls` | Lists files and directories |
+| `ls -l` | Displays detailed file information |
+| `ls -la` | Displays all files, including hidden files |
+| `cd` | Changes the current directory |
+| `touch` | Creates files |
+| `nano` | Edits files |
+| `cat` | Displays file contents |
+| `chmod +x` | Adds executable permissions |
+| `./filename` | Executes a script in the current directory |
+
+## 6. Learning Outcomes
+
+Through these practical exercises, I developed an understanding of:
+
+- Navigating the Linux filesystem.
+- Creating and editing files.
+- Understanding file permissions.
+- Executing Bash scripts.
+- Identifying and correcting command errors.
+- Using the terminal to perform basic automation tasks.
+
+I also gained practical experience in troubleshooting, which is an important skill in Linux administration and DevOps.
+
+## 7. Conclusion
+
+The practical exercises provided an introduction to Linux command-line operations and Bash scripting. I successfully created, edited and executed Bash scripts and resolved errors related to file permissions and command syntax.
+
+These activities established a foundation for further learning in Bash scripting, Git and GitHub, system administration, and DevOps automation.
+
+## 8. Next Steps
+
+The next stage of learning will focus on Bash scripting concepts, including variables, user input, conditional statements, loops, and functions. I will also practise committing and pushing my scripts to GitHub to maintain a record of my learning and practical projects.
+
+
 A reusable Bash script is demonstrated below with permissions needed . Had a bit of a challange not knowing how to create a bash file 
 
 <img width="805" height="717" alt="image" src="https://github.com/user-attachments/assets/a39edb2b-d9e9-47f7-b99c-34c73d57588e" />
