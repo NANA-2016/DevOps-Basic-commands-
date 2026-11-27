@@ -48,18 +48,70 @@ All these commands have been demonstrated below with the use of a photo attached
 <img width="642" height="917" alt="image" src="https://github.com/user-attachments/assets/008d80d3-3560-428a-95ae-d3a3e7202b76" />
 
 
-Working with cat, less ,find, head, tail commands
+## Working with cat, less ,find, head, tail commands
 
-<img width="570" height="532" alt="image" src="https://github.com/user-attachments/assets/b321a474-ece2-404d-960e-f0041d820c69" />
+The image below shows how the commands above have been used . I will go throught eh commands 1 by 1  explaining how they 
+
+have been used 
+
+<img width="570" height="532" alt="image" src="https://github.com/user-attachments/assets/b321a474-ece2-404d-960e-
+   f0041d820c69" />
 
 
-   Working with Grep command 
+The < cat > command is used to check the contents of a file . The command i used here to check the file content of the 
 
+file.txt1. The less command is used to check the contentof a big file and show less or no content of the file depending on 
+
+the size of the file. These command has been used in the file.txt1 and it didnt  show any content as the file is a small 
+
+file . The next command we aren going to look at as i used in the project  is the < head > command . The  command is used 
+
+to to check the content  at the top of the file  and the opposite command  is the < tail> command which is used to theck 
+
+the end of a vig file . I helps ypu be able to get to the bottom of the file with ease without having to scroll down the  
+
+whole file .All theabove commands are used and accompanied bythe file name . for example  <cat filename>, <less filename 
+                                                                                                             >, <head 
+filename> and <tail filename>
+
+Lastly we look at the find command  which is also used in combination with the file name for example <find 
+
+filename/directory name >.These has been demonstrated by  trying to find the Directory2 which was a success.
+
+
+   ## Working with Grep command 
+
+   Grep command is used to find  and match text patterns in files .
+
+    These has been demonstrated below. < grep command has been used toexplore the file content of the file.txt1.The 
+    
+    command has been seen being used to find the word hello in the file .txt1. The command used id grep 'hello' file.txt1. 
+    
+    The word hello has been highlighted  in red as a result from the command .
+   
+     < grep -r 'i' filename.txt1>  these has demonstrated that the letter 'i' has been highlighted through out file. The 
+     
+     command <grep --colour 'Thursday'. These has been demonstrated by highlighted the word Thursday in the file.
+     
+     The <grep command with the tag -c > is used to cound the number of times a word has bbeen used in a file . For 
+     
+     instance in this project, it has been used to find the sentence  "looking forward to Thursday" thes is not found 
+     
+     anywhere in the file and the feedback was 0 and when the same command was used to check for the word " thursaday" an 
+     
+     output of 1 was shown meaning the word Thursady has been found in the file.txt1  once which is true .
+
+     See the attached immage for demonstartion#
+     
    <img width="585" height="662" alt="image" src="https://github.com/user-attachments/assets/fc45d8f1-7462-424c-960e-b8fef8b157dd" />
 
 ### 2.  **Directory Navigation:** Navigate the file system using `pwd` and `cd` (absolute vs. relative paths). Create nested structures with `mkdir -p` and explore standard directories like `/etc`, `/var`, and `/tmp`.
 
-Working with pwd Command to get an absolute path
+## Working with pwd Command to get an absolute path
+
+The next command <pwd> command is an absolute command that show you where you are at the moment on your terminal using / on the path.
+cd takes you  to the file or directory you want to be in . These is demontarate d by rhe command <cd directoryname./file name as demonstrated in the photo below.
+<mkdir -p> is usedd to create a parent directory. The parent directory has the files /etc/, /var ,/tmp are used when troubleshooting .
 
 <img width="375" height="92" alt="image" src="https://github.com/user-attachments/assets/600dd186-a743-448a-95f5-3b4f31f4d873" />
 
@@ -69,7 +121,8 @@ Playing around with cd command and ls to explore etc, tmp and var files
 
 ### 3.  **System Monitoring and Administration:** Inspect system health using `ps aux`, `top`, `df -h`, `free -m`, and `uptime`. Manage users/groups and configure file permissions and ownership using `chmod`, `chown`, and `sudo`.
 
-ps,top df-h  and free-m commands are shown in this image 
+## ps,top df-h  and free-m commands are shown in this image 
+
 
 <img width="587" height="897" alt="image" src="https://github.com/user-attachments/assets/ebb62c77-c13e-4e03-a22f-08651346c528" />
 
